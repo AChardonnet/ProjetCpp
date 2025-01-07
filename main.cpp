@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int Adherent::nbTotLivres = 0;
+int Adherent::nbTotAdherent = 0;
 
 int main()
 {

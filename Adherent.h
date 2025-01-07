@@ -23,7 +23,7 @@ private:
     Livre livres[];
 
 public:
-    static int nbTotLivres;
+    static int nbTotAdherent;
     Adherent();
 };
 
