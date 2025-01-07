@@ -15,4 +15,8 @@ add_executable(ProjetCpp main.cpp
         Theatre.cpp
         Theatre.h
         Album.cpp
-        Album.h)
+        Album.h
+        Bibliotheque.cpp
+        Bibliotheque.h
+        Adherent.cpp
+        Adherent.h)
