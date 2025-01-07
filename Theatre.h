@@ -7,14 +7,14 @@
 #include "Livre.h"
 
 
-
-class Theatre : public Livre{
+class Theatre : public Livre {
     int siecle;
-    public:
-        Theatre();
-        Theatre(int id, string auteur, string titre, string editeur, int ISBN, string publicCible, string etat, int siecle);
-};
 
+public:
+    Theatre();
+
+    Theatre(int id, string auteur, string titre, string editeur, int ISBN, string publicCible, string etat, int siecle);
+};
 
 
 #endif //THEATRE_H

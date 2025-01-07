@@ -7,14 +7,16 @@
 #include "Livre.h"
 
 
-class Recueil : public Livre{
+class Recueil : public Livre {
     bool prose;
     bool vers;
-    public:
-        Recueil();
-        Recueil(int id, string auteur, string titre, string editeur, int ISBN, string publicCible, string etat, bool prose, bool vers);
-};
 
+public:
+    Recueil();
+
+    Recueil(int id, string auteur, string titre, string editeur, int ISBN, string publicCible, string etat, bool prose,
+            bool vers);
+};
 
 
 #endif //RECUEIL_H

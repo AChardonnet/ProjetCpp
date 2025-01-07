@@ -16,9 +16,11 @@ struct Livre {
     int ISBN;
     string publicCible;
     string etat;
-    public:
-        Livre();
-        Livre(int id, string auteur, string titre, string editeur, int ISBN, string publicCible, string etat);
+
+public:
+    Livre();
+
+    Livre(int id, string auteur, string titre, string editeur, int ISBN, string publicCible, string etat);
 };
 
 

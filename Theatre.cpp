@@ -6,9 +6,10 @@
 #include "Livre.h"
 
 
-Theatre::Theatre():Livre(){
+Theatre::Theatre(): Livre() {
 };
 
-Theatre::Theatre(int id, string auteur, string titre, string editeur, int ISBN, string publicCible, string etat, int siecle):Livre(id, auteur, titre, editeur, ISBN, publicCible, etat){
+Theatre::Theatre(int id, string auteur, string titre, string editeur, int ISBN, string publicCible, string etat,
+                 int siecle): Livre(id, auteur, titre, editeur, ISBN, publicCible, etat) {
     this->siecle = siecle;
 }
