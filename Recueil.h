@@ -14,7 +14,7 @@ class Recueil : public Livre {
 public:
     Recueil();
 
-    Recueil(int id, string auteur, string titre, string editeur, int ISBN, string publicCible, string etat, bool prose,
+    Recueil(int id, string auteur, string titre, string editeur, string ISBN, string publicCible, string etat, bool prose,
             bool vers);
 };
 

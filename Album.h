@@ -14,7 +14,7 @@ private:
 public:
     Album();
 
-    Album(int id, string auteur, string titre, string editeur, int ISBN, string publicCible, string etat,
+    Album(int id, string auteur, string titre, string editeur, string ISBN, string publicCible, string etat,
           string illustrations);
 };
 

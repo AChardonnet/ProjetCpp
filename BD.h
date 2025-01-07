@@ -14,7 +14,7 @@ private:
 public:
     BD();
 
-    BD(int id, string auteur, string titre, string editeur, int ISBN, string publicCible, string etat,
+    BD(int id, string auteur, string titre, string editeur, string ISBN, string publicCible, string etat,
        string dessinateur);
 };
 

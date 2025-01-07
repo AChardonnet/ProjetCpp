@@ -20,11 +20,18 @@ private:
     Bibliotheque *bibliotheque;
     int nbLivres;
     int nbLivresMax;
-    Livre* livres[];
+    Livre **livres;
+
+    void augmenterCapacite(int capacite);
 
 public:
     static int nbTotAdherent;
+
     Adherent();
+
+    Adherent(int id, string nom, string prenom, string adresse, Bibliotheque *bibliotheque, int nbLivresMax);
+
+    void emprunter(int idLivre);
 };
 
 

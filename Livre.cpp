@@ -7,7 +7,7 @@
 Livre::Livre() {
 };
 
-Livre::Livre(int id, string auteur, string titre, string editeur, int ISBN, string publicCible, string etat) {
+Livre::Livre(int id, string auteur, string titre, string editeur, string ISBN, string publicCible, string etat) {
     this->id = id;
     this->auteur = auteur;
     this->titre = titre;

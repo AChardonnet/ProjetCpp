@@ -13,7 +13,7 @@ class Roman : public Livre {
 public:
     Roman();
 
-    Roman(int id, string auteur, string titre, string editeur, int ISBN, string publicCible, string etat, string genre);
+    Roman(int id, string auteur, string titre, string editeur, string ISBN, string publicCible, string etat, string genre);
 };
 
 
