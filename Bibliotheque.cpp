@@ -45,7 +45,7 @@ void Bibliotheque::Afficher(){
 void Bibliotheque::AfficherCat(string cat){
     cout<<cat<<endl;
     for(int i = 0; i<nbLivres; i++){
-        if(livres[i]->getCat()==cat){
+        if(livres[i]->getCategorie()==cat){
             livres[i]->Afficher();
         }
     }
@@ -78,7 +78,7 @@ bool Bibliotheque::demander(string ISBN, Bibliotheque* bib){
     Livre* livre = bib->trouveLivre(ISBN);
     if(livre!=nullptr){
         if(livre->getIdBibOrig()==0){
-            livre.setIdBibOrig(bib->id);
+            livre->setIdBibOrig(bib->id);
         }
         ajoutLivre(livre);
     }
