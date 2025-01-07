@@ -3,3 +3,7 @@
 //
 
 #include "Adherent.h"
+
+Adherent::Adherent() {
+
+}
