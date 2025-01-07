@@ -13,8 +13,8 @@
 Theatre::Theatre(): Livre() {
 };
 
-Theatre::Theatre(string auteur, string titre, string editeur, string ISBN, string publicCible, string etat,
-                 int siecle): Livre(auteur, titre, editeur, ISBN, publicCible, etat, "Theatre") {
+Theatre::Theatre(string auteur, string titre, string editeur, string ISBN, string publicCible,
+                 int siecle): Livre(auteur, titre, editeur, ISBN, publicCible, "Theatre") {
     this->siecle = siecle;
 }
 

@@ -10,8 +10,8 @@
 BD::BD() : Livre() {
 }
 
-BD::BD(string auteur, string titre, string editeur, string ISBN, string publicCible, string etat,
-       string dessinateur) : Livre(auteur, titre, editeur, ISBN, publicCible, etat, "BD") {
+BD::BD(string auteur, string titre, string editeur, string ISBN, string publicCible,
+       string dessinateur) : Livre(auteur, titre, editeur, ISBN, publicCible, "BD") {
     this->dessinateur = dessinateur;
 }
 

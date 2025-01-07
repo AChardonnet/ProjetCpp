@@ -14,8 +14,7 @@ private:
 public:
     Album();
 
-    Album(string auteur, string titre, string editeur, string ISBN, string publicCible, string etat,
-          string illustrations);
+    Album(string auteur, string titre, string editeur, string ISBN, string publicCible, string illustrations);
 
     void Afficher();
 };

@@ -13,7 +13,7 @@ class Recueil : public Livre {
 public:
     Recueil();
 
-    Recueil(string auteur, string titre, string editeur, string ISBN, string publicCible, string etat,
+    Recueil(string auteur, string titre, string editeur, string ISBN, string publicCible,
             string indicateur);
 
     void Afficher();

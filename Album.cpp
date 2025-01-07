@@ -9,8 +9,8 @@
 Album::Album() : Livre() {
 }
 
-Album::Album(string auteur, string titre, string editeur, string ISBN, string publicCible, string etat,
-             string illustrations) : Livre(auteur, titre, editeur, ISBN, publicCible, etat, "Album") {
+Album::Album(string auteur, string titre, string editeur, string ISBN, string publicCible,
+             string illustrations) : Livre(auteur, titre, editeur, ISBN, publicCible, "Album") {
     this->illustrations = illustrations;
 }
 

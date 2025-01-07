@@ -12,8 +12,8 @@
 Recueil::Recueil(): Livre() {
 };
 
-Recueil::Recueil(string auteur, string titre, string editeur, string ISBN, string publicCible, string etat,
-                 string indicateur): Livre(auteur, titre, editeur, ISBN, publicCible, etat, "Recueil") {
+Recueil::Recueil(string auteur, string titre, string editeur, string ISBN, string publicCible,
+                 string indicateur): Livre(auteur, titre, editeur, ISBN, publicCible, "Recueil") {
     this->indicateur = indicateur;
 }
 

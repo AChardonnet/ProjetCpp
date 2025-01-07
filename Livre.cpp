@@ -10,16 +10,16 @@
 Livre::Livre() {
 };
 
-Livre::Livre(string auteur, string titre, string editeur, string ISBN, string publicCible, string etat,
+Livre::Livre(string auteur, string titre, string editeur, string ISBN, string publicCible,
              string categorie) {
-    id = nbTotLivres+1;
+    id = nbTotLivres + 1;
     nbTotLivres++;
     this->auteur = auteur;
     this->titre = titre;
     this->editeur = editeur;
     this->ISBN = ISBN;
     this->publicCible = publicCible;
-    this->etat = etat;
+    etat = "Disponible";
     this->categorie = categorie;
 }
 
