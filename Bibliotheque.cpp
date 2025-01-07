@@ -3,3 +3,12 @@
 //
 
 #include "Bibliotheque.h"
+
+Bibliotheque::Bibliotheque() {
+    id = nbTotBibliotheques+1;
+    nbTotBibliotheques++;
+    nom = "";
+    adresse = "";
+    nbLivres = 0;
+    nbLivresMax = 0;
+}

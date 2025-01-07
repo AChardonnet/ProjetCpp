@@ -5,6 +5,7 @@
 using namespace std;
 
 int Adherent::nbTotAdherent = 0;
+int Bibliotheque::nbTotBibliotheques = 0;
 
 int main()
 {

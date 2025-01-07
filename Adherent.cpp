@@ -5,7 +5,8 @@
 #include "Adherent.h"
 
 Adherent::Adherent() {
-    id = nbTotAdherent++;
+    id = nbTotAdherent+1;
+    nbTotAdherent++;
     nom = "";
     prenom = "";
     adresse = "";

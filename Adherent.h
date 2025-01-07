@@ -20,7 +20,7 @@ private:
     Bibliotheque *bibliotheque;
     int nbLivres;
     int nbLivresMax;
-    Livre livres[];
+    Livre* livres[];
 
 public:
     static int nbTotAdherent;

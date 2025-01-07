@@ -4,13 +4,25 @@
 
 #ifndef BIBLIOTHEQUE_H
 #define BIBLIOTHEQUE_H
+#include <string>
 
+#include "Livre.h"
 
+using namespace std;
 
 class Bibliotheque {
+private:
+    int id;
+    string nom;
+    string adresse;
+    int nbLivres;
+    int nbLivresMax;
+    Livre *livres[];
 
+public:
+    static int nbTotBibliotheques;
+    Bibliotheque();
 };
-
 
 
 #endif //BIBLIOTHEQUE_H
