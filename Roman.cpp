@@ -3,6 +3,9 @@
 //
 
 #include "Roman.h"
+
+#include <iostream>
+
 #include "Livre.h"
 
 
@@ -10,6 +13,10 @@ Roman::Roman(): Livre() {
 };
 
 Roman::Roman(int id, string auteur, string titre, string editeur, string ISBN, string publicCible, string etat,
-             string genre): Livre(id, auteur, titre, editeur, ISBN, publicCible, etat) {
+             string genre): Livre(id, auteur, titre, editeur, ISBN, publicCible, etat, "Roman") {
     this->genre = genre;
+}
+
+void Roman::Afficher() {
+    cout << "Genre: " << genre << endl;
 }

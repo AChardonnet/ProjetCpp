@@ -16,6 +16,8 @@ public:
 
     BD(int id, string auteur, string titre, string editeur, string ISBN, string publicCible, string etat,
        string dessinateur);
+
+    void Afficher();
 };
 
 

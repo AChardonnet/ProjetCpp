@@ -3,14 +3,19 @@
 //
 
 #include "Recueil.h"
+
+#include <iostream>
+
 #include "Livre.h"
 
 
 Recueil::Recueil(): Livre() {
 };
 
-Recueil::Recueil(int id, string auteur, string titre, string editeur, string ISBN, string publicCible, string etat,
-                 bool prose, bool vers): Livre(id, auteur, titre, editeur, ISBN, publicCible, etat) {
-    this->prose = prose;
-    this->vers = vers;
+Recueil::Recueil(int id, string auteur, string titre, string editeur, string ISBN, string publicCible, string etat, string indicateur): Livre(id, auteur, titre, editeur, ISBN, publicCible, etat, "Recueil") {
+    this->indicateur = indicateur;
+}
+
+void Recueil::Afficher() {
+    cout << "indicateur: " << indicateur << endl;
 }

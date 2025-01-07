@@ -10,6 +10,8 @@ using namespace std;
 
 struct Livre {
     int id;
+    int idBibOrig;
+    string categorie;
     string auteur;
     string titre;
     string editeur;
@@ -20,13 +22,19 @@ struct Livre {
 public:
     Livre();
 
-    Livre(int id, string auteur, string titre, string editeur, string ISBN, string publicCible, string etat);
+    Livre(int id, string auteur, string titre, string editeur, string ISBN, string publicCible, string etat, string categorie);
 
     void setEtat(string etat);
 
+    void setIdBibOrig(int id);
+
     int getId();
 
+    string getCategorie();
+
     string getEtat();
+
+    int getIdBibOrig();
 
     void Afficher();
 };
