@@ -12,7 +12,8 @@ Livre::Livre() {
 
 Livre::Livre(string auteur, string titre, string editeur, string ISBN, string publicCible, string etat,
              string categorie) {
-    this->id = id;
+    id = nbTotLivres+1;
+    nbTotLivres++;
     this->auteur = auteur;
     this->titre = titre;
     this->editeur = editeur;

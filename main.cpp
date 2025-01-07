@@ -10,6 +10,7 @@
 
 using namespace std;
 
+int Livre::nbTotLivres = 0;
 int Adherent::nbTotAdherent = 0;
 int Bibliotheque::nbTotBibliotheques = 0;
 

@@ -20,6 +20,7 @@ struct Livre {
     string etat;
 
 public:
+    static int nbTotLivres;
     Livre();
 
     Livre(string auteur, string titre, string editeur, string ISBN, string publicCible, string etat, string categorie);
