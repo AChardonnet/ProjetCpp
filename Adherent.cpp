@@ -48,9 +48,13 @@ void Adherent::emprunter(int idLivre) {
         if (livre == nullptr) {
             throw "Le livre n'existe pas";
         } else {
-            livres[nbLivres] = livre;
-            nbLivres++;
-            livre->setEtat("Emprunte");
+            if (livre->getEtat() != "Disponible") {
+                throw "Le livre est déjà emprunté";
+            } else {
+                livres[nbLivres] = livre;
+                nbLivres++;
+                livre->setEtat("Emprunte");
+            }
         }
     }
 }

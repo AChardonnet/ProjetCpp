@@ -32,6 +32,10 @@ int Livre::getId() {
     return this->id;
 }
 
+string Livre::getEtat() {
+    return this->etat;
+}
+
 void Livre::Afficher() {
     cout << "ID: " << this->id << " Auteur: " << this->auteur << " Titre: " << this->titre << "ISBN: " << this->ISBN <<
         "public Cible: " << this->publicCible << "état:" << this->etat << endl;
