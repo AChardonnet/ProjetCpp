@@ -4,11 +4,15 @@
 
 #ifndef THEATRE_H
 #define THEATRE_H
+#include "Livre.h"
 
 
 
-class Theatre {
-
+class Theatre : public Livre{
+    int siecle;
+    public:
+        Theatre();
+        Theatre(int id, string auteur, string titre, string editeur, int ISBN, string publicCible, string etat, int siecle);
 };
 
 
