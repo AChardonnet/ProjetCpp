@@ -1,7 +1,13 @@
 #include <iostream>
 
+#include "Adherent.h"
+
+using namespace std;
+
+int Adherent::nbTotLivres = 0;
+
 int main()
 {
-    std::cout << "Hello, World!" << std::endl;
+    cout << "Hello, World!" << endl;
     return 0;
 }
