@@ -26,10 +26,12 @@ public:
     // void ajoutLivres(Livre**);
     void augmenterCapacite();
     void Afficher();
+    void AfficherCat(string cat);
     Livre* trouveLivre(int id);
     Livre* trouveLivre(string ISBN);
     bool demander(string ISBN, Bibliotheque* bib);
     void supprimer(int id);
+    void rendre();
 };
 
 

@@ -4,7 +4,6 @@
 
 #include "Bibliotheque.h"
 #include "Livre.h"
-#include <cstddef>
 #include <iostream>
 using namespace std;
 
@@ -43,20 +42,45 @@ void Bibliotheque::Afficher(){
     }
 }
 
+void Bibliotheque::AfficherCat(string cat){
+    cout<<cat<<endl;
+    for(int i = 0; i<nbLivres; i++){
+        if(livres[i]->getCat()==cat){
+            livres[i]->Afficher();
+        }
+    }
+}
+
 Livre* Bibliotheque::trouveLivre(int id){
     for(int i = 0; i<nbLivres; i++){
         int id_livre = livres[i]->getId();
-        if(id_livre==id){
+        int idBibOrig = livres[i]->getIdBibOrig();
+        if(id_livre==id && (idBibOrig == 0 or idBibOrig!=this->id)){
             return livres[i];
         }
     }
     return nullptr;
 }
 
+Livre* Bibliotheque::trouveLivre(string ISBN){
+    for(int i = 0; i<nbLivres; i++){
+        int id_livre = livres[i]->getId();
+        string etat = livres[i]->getEtat();
+        int idBibOrig = livres[i]->getIdBibOrig();
+        if(id_livre==id && etat=="disponible" && (idBibOrig == 0 or idBibOrig!=this->id)){
+            return livres[i];
+        }
+    }
+    return nullptr;   
+}
+
 bool Bibliotheque::demander(string ISBN, Bibliotheque* bib){
     Livre* livre = bib->trouveLivre(ISBN);
     if(livre!=nullptr){
-       // livre.setEtat
+        if(livre->getIdBibOrig()==0){
+            livre.setIdBibOrig(bib->id);
+        }
+        ajoutLivre(livre);
     }
 }
 
@@ -70,8 +94,20 @@ void Bibliotheque::supprimer(int id){
         }
     }
     if(ind>=0){
-        for(int i = ind; i<nbLivres-1; i++){
+        nbLivres--;
+        for(int i = ind; i<nbLivres; i++){
             livres[i+1] = livres[i];
         }
+    }
+}
+
+void Bibliotheque::rendre(){
+    int i = 0;
+    while(i<nbLivres){
+        if(livres[i]->getIdBibOrig()!=0){
+            livres[i]->setIdBibOrig(0);
+            supprimer(livres[i]->getId());
+        }
+        i++;
     }
 }
