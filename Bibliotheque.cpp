@@ -4,6 +4,7 @@
 
 #include "Bibliotheque.h"
 #include "Livre.h"
+#include <cstddef>
 #include <iostream>
 using namespace std;
 
@@ -52,3 +53,25 @@ Livre* Bibliotheque::trouveLivre(int id){
     return nullptr;
 }
 
+bool Bibliotheque::demander(string ISBN, Bibliotheque* bib){
+    Livre* livre = bib->trouveLivre(ISBN);
+    if(livre!=nullptr){
+       // livre.setEtat
+    }
+}
+
+void Bibliotheque::supprimer(int id){
+    int ind = -1;
+    for(int i = 0; i<nbLivres; i++){
+        int id_livre = livres[i]->getId();
+        if(id_livre==id){
+            ind = i;
+            break;
+        }
+    }
+    if(ind>=0){
+        for(int i = ind; i<nbLivres-1; i++){
+            livres[i+1] = livres[i];
+        }
+    }
+}

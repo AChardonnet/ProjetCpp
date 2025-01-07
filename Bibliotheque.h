@@ -27,6 +27,9 @@ public:
     void augmenterCapacite();
     void Afficher();
     Livre* trouveLivre(int id);
+    Livre* trouveLivre(string ISBN);
+    bool demander(string ISBN, Bibliotheque* bib);
+    void supprimer(int id);
 };
 
 
