@@ -17,11 +17,16 @@ private:
     string adresse;
     int nbLivres;
     int nbLivresMax;
-    Livre *livres[];
+    Livre ** livres;
 
 public:
     static int nbTotBibliotheques;
     Bibliotheque();
+    void ajoutLivre(Livre*);
+    // void ajoutLivres(Livre**);
+    void augmenterCapacite();
+    void Afficher();
+    Livre* trouveLivre(int id);
 };
 
 
