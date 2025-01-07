@@ -25,6 +25,8 @@ public:
     void setEtat(string etat);
 
     int getId();
+
+    void Afficher();
 };
 
 

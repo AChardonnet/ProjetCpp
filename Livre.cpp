@@ -4,6 +4,9 @@
 
 #include "Livre.h"
 
+#include <iostream>
+#include <ostream>
+
 Livre::Livre() {
 };
 
@@ -15,4 +18,21 @@ Livre::Livre(int id, string auteur, string titre, string editeur, string ISBN, s
     this->ISBN = ISBN;
     this->publicCible = publicCible;
     this->etat = etat;
+}
+
+void Livre::setEtat(string etat) {
+    if (etat == "Disponible" || etat == "Emprunte") {
+        this->etat = etat;
+    } else {
+        throw "Etat invalide";
+    }
+}
+
+int Livre::getId() {
+    return this->id;
+}
+
+void Livre::Afficher() {
+    cout << "ID: " << this->id << " Auteur: " << this->auteur << " Titre: " << this->titre << "ISBN: " << this->ISBN <<
+        "public Cible: " << this->publicCible << "état:" << this->etat << endl;
 }

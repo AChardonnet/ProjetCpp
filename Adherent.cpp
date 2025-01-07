@@ -44,13 +44,13 @@ void Adherent::emprunter(int idLivre) {
     if (nbLivres >= nbLivresMax) {
         throw "Trop de livres sont empruntés";
     } else {
-        Livre* livre = bibliotheque->trouvreLivre(idLivre);
+        Livre* livre = bibliotheque->trouveLivre(idLivre);
         if (livre == nullptr) {
             throw "Le livre n'existe pas";
         } else {
             livres[nbLivres] = livre;
             nbLivres++;
-            livre->setEtat("emprunte");
+            livre->setEtat("Emprunte");
         }
     }
 }
