@@ -17,6 +17,7 @@ struct Livre {
     string public_cible;
     string etat;
     public:
+        Livre();
         Livre(int id, string auteur, string titre, string editeur, int ISBN, string public_cible, string etat);
 };
 

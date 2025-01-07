@@ -3,3 +3,11 @@
 //
 
 #include "BD.h"
+
+BD::BD() : Livre() {
+}
+
+BD::BD(int id, string auteur, string titre, string editeur, int ISBN, string publicCible, string etat,
+       string dessinateur) : Livre(id, auteur, titre, editeur, ISBN, publicCible, etat) {
+       this->dessinateur = dessinateur;
+}
