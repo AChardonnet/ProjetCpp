@@ -15,6 +15,5 @@ int Bibliotheque::nbTotBibliotheques = 0;
 
 int main()
 {
-    cout << "Hello, World!" << endl;
     return 0;
 }

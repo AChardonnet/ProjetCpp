@@ -13,7 +13,7 @@ class Theatre : public Livre {
 public:
     Theatre();
 
-    Theatre(int id, string auteur, string titre, string editeur, string ISBN, string publicCible, string etat, int siecle);
+    Theatre(string auteur, string titre, string editeur, string ISBN, string publicCible, string etat, int siecle);
 
     void Afficher();
 };

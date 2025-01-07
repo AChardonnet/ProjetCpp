@@ -10,7 +10,7 @@
 Livre::Livre() {
 };
 
-Livre::Livre(int id, string auteur, string titre, string editeur, string ISBN, string publicCible, string etat,
+Livre::Livre(string auteur, string titre, string editeur, string ISBN, string publicCible, string etat,
              string categorie) {
     this->id = id;
     this->auteur = auteur;
@@ -31,7 +31,7 @@ void Livre::setEtat(string etat) {
 }
 
 void Livre::setIdBibOrig(int id) {
-    idBibOrig = id
+    idBibOrig = id;
 }
 
 int Livre::getId() {
