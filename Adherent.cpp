@@ -8,7 +8,7 @@ void Adherent::augmenterCapacite(int capacite) {
     if (capacite < 1 || capacite < nbLivresMax) {
         throw "Capacite is out of range";
     } else {
-        Livre **L = new Livre*[capacite];
+        Livre **L = new Livre *[capacite];
         for (int i = 0; i < nbLivresMax - 1; i++) {
             L[i] = livres[i];
         }
@@ -37,14 +37,14 @@ Adherent::Adherent(int id, string nom, string prenom, string adresse, Bibliotheq
     this->bibliotheque = bibliotheque;
     this->nbLivresMax = nbLivresMax;
     nbLivres = 0;
-    livres = new Livre*[nbLivresMax];
+    livres = new Livre *[nbLivresMax];
 }
 
 void Adherent::emprunter(int idLivre) {
     if (nbLivres >= nbLivresMax) {
         throw "Trop de livres sont empruntés";
     } else {
-        Livre* livre = bibliotheque->trouveLivre(idLivre);
+        Livre *livre = bibliotheque->trouveLivre(idLivre);
         if (livre == nullptr) {
             throw "Le livre n'existe pas";
         } else {
@@ -53,4 +53,24 @@ void Adherent::emprunter(int idLivre) {
             livre->setEtat("Emprunte");
         }
     }
+}
+
+void Adherent::rendre(int idLivre) {
+    int index = trouveLivre(idLivre);
+    if (index == -1) {
+        throw "Le livre n'est pas emprunté par cet utilisateur";
+    } else {
+        livres[index]->setEtat("Disponible");
+        livres[index] = nullptr;
+    }
+}
+
+int Adherent::trouveLivre(int idLivre) {
+    for (int i = 0; i < nbLivres; i++) {
+        int id = livres[i]->getId();
+        if (id == idLivre) {
+            return i;
+        }
+    }
+    return -1;
 }

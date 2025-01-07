@@ -32,6 +32,10 @@ public:
     Adherent(int id, string nom, string prenom, string adresse, Bibliotheque *bibliotheque, int nbLivresMax);
 
     void emprunter(int idLivre);
+
+    void rendre(int idLivre);
+
+    int trouveLivre(int idLivre);
 };
 
 
