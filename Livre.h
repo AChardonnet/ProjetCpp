@@ -14,11 +14,11 @@ struct Livre {
     string titre;
     string editeur;
     int ISBN;
-    string public_cible;
+    string publicCible;
     string etat;
     public:
         Livre();
-        Livre(int id, string auteur, string titre, string editeur, int ISBN, string public_cible, string etat);
+        Livre(int id, string auteur, string titre, string editeur, int ISBN, string publicCible, string etat);
 };
 
 
