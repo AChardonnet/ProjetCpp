@@ -76,7 +76,7 @@ Livre *Bibliotheque::trouveLivre(string ISBN) {
     return nullptr;
 }
 
-bool Bibliotheque::demander(string ISBN, Bibliotheque *bib) {
+void Bibliotheque::demander(string ISBN, Bibliotheque *bib) {
     Livre *livre = bib->trouveLivre(ISBN);
     if (livre != nullptr) {
         if (livre->getIdBibOrig() == 0) {

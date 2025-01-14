@@ -8,6 +8,15 @@
 #include "Roman.h"
 #include "Theatre.h"
 
+#include "Adherent.cpp"
+#include "Album.cpp"
+#include "BD.cpp"
+#include "Bibliotheque.cpp"
+#include "Recueil.cpp"
+#include "Roman.cpp"
+#include "Theatre.cpp"
+#include "Livre.cpp"
+
 using namespace std;
 
 int Livre::nbTotLivres = 0;
@@ -34,7 +43,7 @@ int main()
     a1.emprunter(1);
     //b1.Afficher();
     cout << a1.trouveLivre(1);
-    //a1.rendre(1);
+    a1.rendre(1);
 
     return 0;
 }

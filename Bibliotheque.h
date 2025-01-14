@@ -37,7 +37,7 @@ public:
 
     Livre *trouveLivre(string ISBN);
 
-    bool demander(string ISBN, Bibliotheque *bib);
+    void demander(string ISBN, Bibliotheque *bib);
 
     void supprimer(int id);
 
