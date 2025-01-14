@@ -17,21 +17,35 @@ private:
     string adresse;
     int nbLivres;
     int nbLivresMax;
-    Livre ** livres;
+    Livre **livres;
 
 public:
     static int nbTotBibliotheques;
+
     Bibliotheque();
-    void ajoutLivre(Livre*);
+
+    void ajoutLivre(Livre *);
+
     // void ajoutLivres(Livre**);
     void augmenterCapacite();
+
     void Afficher();
+
     void AfficherCat(string cat);
-    Livre* trouveLivre(int id);
-    Livre* trouveLivre(string ISBN);
-    bool demander(string ISBN, Bibliotheque* bib);
+
+    Livre *trouveLivre(int id);
+
+    Livre *trouveLivre(string ISBN);
+
+    bool demander(string ISBN, Bibliotheque *bib);
+
     void supprimer(int id);
+
     void rendre();
+
+    void setNom(string nom);
+
+    void setAdresse(string adresse);
 };
 
 

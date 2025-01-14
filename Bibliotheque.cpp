@@ -113,3 +113,11 @@ void Bibliotheque::rendre() {
         i++;
     }
 }
+
+void Bibliotheque::setNom(string nom) {
+    this->nom = nom;
+}
+
+void Bibliotheque::setAdresse(string adresse) {
+    this->adresse = adresse;
+}
