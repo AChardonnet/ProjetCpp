@@ -43,6 +43,8 @@ public:
 
     void rendre();
 
+    void saisirAdherent();
+
     void setNom(string nom);
 
     void setAdresse(string adresse);

@@ -4,6 +4,9 @@
 
 #include "Adherent.h"
 
+#include <iostream>
+#include <stdexcept>
+
 void Adherent::augmenterCapacite(int capacite) {
     if (capacite < 1 || capacite < nbLivresMax) {
         throw "Capacite is out of range";
@@ -68,7 +71,7 @@ void Adherent::emprunter(int idLivre) {
 void Adherent::rendre(int idLivre) {
     int index = trouveLivre(idLivre);
     if (index == -1) {
-        throw "Le livre n'est pas emprunté par cet utilisateur";
+        throw invalid_argument("Le livre n'est pas emprunté par cet utilisateur");
     } else {
         livres[index]->setEtat("Disponible");
         livres[index] = nullptr;
@@ -77,9 +80,14 @@ void Adherent::rendre(int idLivre) {
 
 int Adherent::trouveLivre(int idLivre) {
     for (int i = 0; i < nbLivres; i++) {
-        int id = livres[i]->getId();
-        if (id == idLivre) {
-            return i;
+        if (livres[i] != nullptr) {
+            cout << i;
+            int id = livres[i]->getId();
+            cout << id << endl;
+            if (id == idLivre) {
+                cout << i ;
+                return i;
+            }
         }
     }
     return -1;
