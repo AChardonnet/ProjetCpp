@@ -29,8 +29,9 @@ Adherent::Adherent() {
     livres = nullptr;
 }
 
-Adherent::Adherent(int id, string nom, string prenom, string adresse, Bibliotheque *bibliotheque, int nbLivresMax) {
-    this->id = id;
+Adherent::Adherent(string nom, string prenom, string adresse, Bibliotheque *bibliotheque, int nbLivresMax) {
+    id = nbTotAdherent + 1;
+    nbTotAdherent++;
     this->nom = nom;
     this->prenom = prenom;
     this->adresse = adresse;

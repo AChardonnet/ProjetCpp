@@ -29,7 +29,7 @@ public:
 
     Adherent();
 
-    Adherent(int id, string nom, string prenom, string adresse, Bibliotheque *bibliotheque, int nbLivresMax);
+    Adherent(string nom, string prenom, string adresse, Bibliotheque *bibliotheque, int nbLivresMax);
 
     void emprunter(int idLivre);
 
