@@ -18,5 +18,6 @@ Roman::Roman(string auteur, string titre, string editeur, string ISBN, string pu
 }
 
 void Roman::Afficher() {
+    Livre::Afficher();
     cout << "Genre: " << genre << endl;
 }

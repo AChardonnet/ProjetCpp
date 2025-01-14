@@ -17,5 +17,5 @@ BD::BD(string auteur, string titre, string editeur, string ISBN, string publicCi
 
 void BD::Afficher() {
     Livre::Afficher();
-    cout << "dessinateur" << dessinateur << endl;
+    cout << " dessinateur: " << dessinateur << endl;
 }

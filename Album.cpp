@@ -16,5 +16,5 @@ Album::Album(string auteur, string titre, string editeur, string ISBN, string pu
 
 void Album::Afficher() {
     Livre::Afficher();
-    cout << "Illustrations: " << illustrations << endl;
+    cout << " Illustrations: " << illustrations << endl;
 }

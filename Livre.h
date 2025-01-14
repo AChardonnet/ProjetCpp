@@ -21,6 +21,7 @@ struct Livre {
 
 public:
     static int nbTotLivres;
+
     Livre();
 
     Livre(string auteur, string titre, string editeur, string ISBN, string publicCible, string categorie);
@@ -37,7 +38,7 @@ public:
 
     int getIdBibOrig();
 
-    void Afficher();
+    virtual void Afficher();
 };
 
 

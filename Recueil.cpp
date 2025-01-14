@@ -18,5 +18,6 @@ Recueil::Recueil(string auteur, string titre, string editeur, string ISBN, strin
 }
 
 void Recueil::Afficher() {
+    Livre::Afficher();
     cout << "indicateur: " << indicateur << endl;
 }

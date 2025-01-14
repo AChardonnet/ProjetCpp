@@ -52,6 +52,6 @@ int Livre::getIdBibOrig() {
 }
 
 void Livre::Afficher() {
-    cout << "ID: " << this->id << " Auteur: " << this->auteur << " Titre: " << this->titre << "ISBN: " << this->ISBN <<
-            "public Cible: " << this->publicCible << "état:" << this->etat << "Catégorie:" << this->categorie;
+    cout << "ID: " << this->id << " Auteur: " << this->auteur << " Titre: " << this->titre << " ISBN: " << this->ISBN <<
+            " public Cible: " << this->publicCible << " état:" << this->etat << " Catégorie:" << this->categorie;
 }
