@@ -41,8 +41,11 @@ int main() {
     chainedList<Adherent*> adherents;
 
     Bibliotheque* b1 = new Bibliotheque();
+    Bibliotheque* b2 = new Bibliotheque();
     b1->setNom("Médiathèque Albert-Camus");
     b1->setAdresse("7 Rue du Village, 91000 Évry-Courcouronnes");
+    b2->setNom("test");
+    b2->setAdresse("test");
     b1->ajoutLivre(new BD("André Franquin", "Gaston Lagaffe R1 - Gala de gaffes à gogo", "Dupuis", "978-2800100937",
                          "Tous Publics", "André Franquin"));
     b1->ajoutLivre(new BD("André Franquin", "Gaston Lagaffe R1 - Gala de gaffes à gogo", "Dupuis", "978-2800100937",
@@ -52,8 +55,9 @@ int main() {
     b1->ajoutLivre(new BD("André Franquin", "Gaston Lagaffe R1 - Gala de gaffes à gogo", "Dupuis", "978-2800100937",
                          "Tous Publics", "André Franquin"));
     b1->ajoutLivre(new Theatre("Molière", "Le Médecin malgré lui", "Larousse", "2035866537", "Tous Publics",17));
-
+    b2->demander("978-2800100937", b1);
     bibliotheques.push(b1);
+    bibliotheques.push(b2);
 
     Adherent* a1 = new Adherent("Martin", "Pierre", "11 rue de Provence", b1, 30);
     a1->emprunter(1);
@@ -70,12 +74,12 @@ int main() {
             system("clear");
             int index;
             cout << "Sélectionnez la bibliothèque (index) : "<<endl;
-            for (size_t i = 0; i < bibliotheques.size(); ++i) {
+            for (int i = 0; i < bibliotheques.size(); ++i) {
                 cout << i << ". " << bibliotheques[i]->getNom() << endl;
             }
             cin >> index;
             if (index >= 0 && index < bibliotheques.size()) {
-                menuBib(*bibliotheques[index]);
+                menuBib(*bibliotheques[index], bibliotheques);
             } else {
                 cout << "Index invalide !" << endl;
                 cin.ignore();
@@ -85,7 +89,7 @@ int main() {
             system("clear");
             int index;
             cout << "Sélectionnez l'adhérent (index) : "<<endl;
-            for (size_t i = 0; i < adherents.size(); ++i) {
+            for (int i = 0; i < adherents.size(); ++i) {
                 cout << i << ". " << adherents[i]->getNom() << " " << adherents[i]->getPrenom() << endl;
             }
             cin >> index;
@@ -122,7 +126,7 @@ int main() {
             cout << "Entrez l'adresse de l'adhérent : ";
             getline(cin, adresse);
             cout << "Sélectionnez la bibliothèque (index) : "<<endl;
-            for (size_t i = 0; i < bibliotheques.size(); ++i) {
+            for (int i = 0; i < bibliotheques.size(); ++i) {
                 cout << i << ". " << bibliotheques[i]->getNom() << endl;
             }
             cin >> index;

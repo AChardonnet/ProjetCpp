@@ -6,6 +6,7 @@
 #include "Album.h"
 #include "Recueil.h"
 #include "Adherent.h"
+#include "chainedList.h"
 
 using namespace std;
 
@@ -15,12 +16,12 @@ void afficherMenuBib() {
     cout << "3. Afficher les livres par catégorie" << endl;
     cout << "4. Supprimer un livre" << endl;
     cout << "5. Rendre tous les livres empruntés" << endl;
-    cout << "6. Ajouter un adhérent"<<endl;
+    cout << "6. Demander un livre"<<endl;
     cout << "7. Retour" << endl;
     cout << "Entrez votre choix : ";
 }
 
-int menuBib(Bibliotheque &b1) {
+int menuBib(Bibliotheque &b1, chainedList<Bibliotheque*> bibliotheques) {
     int choix;
     while (true) {
         system("clear");
@@ -110,19 +111,23 @@ int menuBib(Bibliotheque &b1) {
             cin.get();
         } else if (choix == 6) {
             system("clear");
-            string nom, prenom, adresse;
-            cout << "Entrez le nom de l'adhérent : ";
+            string ISBN;
+            cout << "Entrez l'ISBN du livre à demander : ";
             cin.ignore();
-            getline(cin, nom);
-            cout << "Entrez le prénom de l'adhérent : ";
-            getline(cin, prenom);
-            cout << "Entrez l'adresse de l'adhérent : ";
-            getline(cin, adresse);
-            int nbLivresMax;
-            cout << "Entrez le nombre maximum de livres empruntables : ";
-            cin >> nbLivresMax;
-
-            Adherent *nouvelAdherent = new Adherent(nom, prenom, adresse, &b1, nbLivresMax);
+            getline(cin, ISBN);
+            int index;
+            cout << "Sélectionnez la bibliothèque (index) : "<<endl;
+            for (int i = 0; i < bibliotheques.size(); ++i) {
+                cout << i << ". " << bibliotheques[i]->getNom() << endl;
+            }
+            cin >> index;
+            if (index >= 0 && index < bibliotheques.size() && bibliotheques[index]!=&b1) {
+                b1.demander(ISBN, bibliotheques[index]);
+            } else {
+                cout << "Index invalide !" << endl;
+                cin.ignore();
+                cin.get();
+            }
         } else if (choix == 7) {
             break;
         } else {
