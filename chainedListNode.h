@@ -1,13 +1,16 @@
-#ifndef BIBLIOTHEQUE_H
-#define BIBLIOTHEQUE_H
+#ifndef CHAINEDLISTNODE_H
+#define CHAINEDLISTNODE_H
+
+template <class T>
 class chainedListNode {
     private:
-        auto data;
+        T data;
         chainedListNode *next;
     public:
-        chainedListNode(auto data);
-        auto getData();
+        chainedListNode(T data);
+        T getData();
         chainedListNode *getNext();
         void setNext(chainedListNode *next);
 };
+
 #endif

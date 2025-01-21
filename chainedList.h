@@ -1,15 +1,18 @@
-#ifndef BIBLIOTHEQUE_H
-#define BIBLIOTHEQUE_H
+#ifndef CHAINEDLIST_H
+#define CHAINEDLIST_H
 
-#include chainedListNode.h
+#include "chainedListNode.h"
+
+template <class T>
 class chainedList {
     private:
-        chainedListNode *head;
+        chainedListNode<T> *head;
         int size;
     public:
         chainedList();
         int size();
-        void push(auto data);
-        auto operator[](int index);
+        void push(T data);
+        T operator[](int index);
 };
+
 #endif

@@ -1,20 +1,23 @@
 #include "chainedList.h"
 
-chainedList::chainedList() {
+template <class T>
+chainedList<T>::chainedList() {
     head = nullptr;
     size = 0;
 }
 
-int chainedList::size() {
+template <class T>
+int chainedList<T>::size() {
     return size;
 }
 
-void chainedList::push(auto data) {
-    chainedListNode *newNode = new chainedListNode(data);
+template <class T>
+void chainedList<T>::push(T data) {
+    chainedListNode<T> *newNode = new chainedListNode<T>(data);
     if (head == nullptr) {
         head = newNode;
     } else {
-        chainedListNode *current = head;
+        chainedListNode<T> *current = head;
         while (current->getNext() != nullptr) {
             current = current->getNext();
         }
@@ -23,13 +26,19 @@ void chainedList::push(auto data) {
     size++;
 }
 
-auto chainedList::operator[](int index) {
+template <class T>
+T chainedList<T>::operator[](int index) {
     if (index < 0 || index >= size) {
         throw "Index out of bounds";
     }
-    chainedListNode *current = head;
+    chainedListNode<T> *current = head;
     for (int i = 0; i < index; i++) {
         current = current->getNext();
     }
     return current->getData();
 }
+
+// Explicit template instantiation
+template class chainedList<int>;
+template class chainedList<Bibliotheque*>;
+template class chainedList<Adherent*>;

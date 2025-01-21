@@ -1,18 +1,27 @@
 #include "chainedListNode.h"
 
-chainedListNode::chainedListNode(auto data) {
+template <class T>
+chainedListNode<T>::chainedListNode(T data) {
     this->data = data;
     this->next = nullptr;
 }
 
-auto chainedListNode::getData() {
+template <class T>
+T chainedListNode<T>::getData() {
     return data;
 }
 
-chainedListNode* chainedListNode::getNext() {
+template <class T>
+chainedListNode<T>* chainedListNode<T>::getNext() {
     return next;
 }
 
-void chainedListNode::setNext(chainedListNode *next) {
+template <class T>
+void chainedListNode<T>::setNext(chainedListNode *next) {
     this->next = next;
 }
+
+// Explicit template instantiation
+template class chainedListNode<int>;
+template class chainedListNode<Bibliotheque*>;
+template class chainedListNode<Adherent*>;
