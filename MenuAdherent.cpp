@@ -1,0 +1,55 @@
+#include <iostream>
+#include "Adherent.h"
+#include "Bibliotheque.h"
+#include "Livre.h"
+
+using namespace std;
+
+void afficherMenuAdherent() {
+    cout << "1. Emprunter un livre" << endl;
+    cout << "2. Rendre un livre" << endl;
+    cout << "3. Quitter" << endl;
+    cout << "Entrez votre choix : ";
+}
+
+int MenuAdherent(Adherent &adherent) {
+
+    int choix;
+    while (true) {
+        system("clear");
+        afficherMenuAdherent();
+        cin >> choix;
+
+        if (choix == 1) {
+            int idLivre;
+            cout << "Entrez l'ID du livre à emprunter : ";
+            cin >> idLivre;
+
+            try {
+                adherent.emprunter(idLivre);
+                cout << "Livre emprunté avec succès !" << endl;
+            } catch (const exception &e) {
+                cout << "le livre n'a pas pu être emprunté" << endl;
+                cout << msg << endl;
+            }
+        } else if (choix == 2) {
+            int idLivre;
+            cout << "Entrez l'ID du livre à rendre : ";
+            cin >> idLivre;
+
+            try {
+                adherent.rendre(idLivre);
+                cout << "Livre rendu avec succès !" << endl;
+            } catch (const exception &e) {
+                cout << "le livre n'a pas pu être rendu" << endl;
+                cout << e.what() << endl;
+            }
+        } else if (choix == 3) {
+            break;
+        } else {
+            cout << "Choix invalide ! Veuillez réessayer." << endl;
+        }
+    }
+
+    return 0;
+}

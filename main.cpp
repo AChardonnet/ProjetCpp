@@ -46,5 +46,6 @@ int main()
     cout << a1.trouveLivre(1);
     a1.rendre(1);
     menuBib(b1);
+    MenuAdherent(a1);
     return 0;
 }

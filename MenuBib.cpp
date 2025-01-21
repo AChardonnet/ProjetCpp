@@ -5,7 +5,7 @@
 #include "Theatre.h"
 #include "Album.h"
 #include "Recueil.h"
-
+#include "MenuAdherent.cpp"
 
 using namespace std;
 
@@ -15,7 +15,8 @@ void afficherMenuBib() {
     cout << "3. Afficher les livres par catégorie" << endl;
     cout << "4. Supprimer un livre" << endl;
     cout << "5. Rendre tous les livres empruntés" << endl;
-    cout << "6. Quitter" << endl;
+    cout << "6. Ajouter un adhérent"<<endl;
+    cout << "7. Quitter" << endl;
     cout << "Entrez votre choix : ";
 }
 
@@ -98,6 +99,20 @@ int menuBib(Bibliotheque &b1) {
             b1.rendre();
             cout << "Tous les livres empruntés ont été rendus" << endl;
         } else if (choix == 6) {
+            string nom, prenom, adresse;
+            cout << "Entrez le nom de l'adhérent : ";
+            cin.ignore();
+            getline(cin, nom);
+            cout << "Entrez le prénom de l'adhérent : ";
+            getline(cin, prenom);
+            cout << "Entrez l'adresse de l'adhérent : ";
+            getline(cin, adresse);
+            int nbLivresMax;
+            cout << "Entrez le nombre maximum de livres empruntables : ";
+            cin >> nbLivresMax;
+
+            Adherent *nouvelAdherent = new Adherent(nom, prenom, adresse, b1, nbLivresMax);
+        } else if (choix == 7) {
             break;
         } else {
             cout << "Choix invalide ! Veuillez réessayer." << endl;
