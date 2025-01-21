@@ -1,6 +1,4 @@
 #include "chainedList.h"
-#include "Adherent.h"
-#include "Bibliotheque.h"
 
 template <class T>
 chainedList<T>::chainedList() {
@@ -40,5 +38,3 @@ T chainedList<T>::operator[](int index) {
     return current->getData();
 }
 
-template class chainedList<Bibliotheque*>;
-template class chainedList<Adherent*>;

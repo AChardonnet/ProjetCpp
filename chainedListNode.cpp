@@ -1,6 +1,4 @@
 #include "chainedListNode.h"
-#include "Adherent.h"
-#include "Bibliotheque.h"
 
 template <class T>
 chainedListNode<T>::chainedListNode(T data) {
@@ -22,6 +20,3 @@ template <class T>
 void chainedListNode<T>::setNext(chainedListNode *next) {
     this->next = next;
 }
-
-template class chainedListNode<Bibliotheque*>;
-template class chainedListNode<Adherent*>;

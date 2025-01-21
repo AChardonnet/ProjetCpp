@@ -40,7 +40,6 @@ int main() {
     chainedList<Bibliotheque*> bibliotheques;
     chainedList<Adherent*> adherents;
 
-    // Initial setup
     Bibliotheque* b1 = new Bibliotheque();
     b1->setNom("Médiathèque Albert-Camus");
     b1->setAdresse("7 Rue du Village, 91000 Évry-Courcouronnes");
@@ -68,6 +67,7 @@ int main() {
         afficherMenuPrincipal();
         cin >> choix;
         if (choix == 1) {
+            system("clear");
             int index;
             cout << "Sélectionnez la bibliothèque (index) : "<<endl;
             for (size_t i = 0; i < bibliotheques.size(); ++i) {
@@ -82,6 +82,7 @@ int main() {
                 cin.get();
             }
         } else if (choix == 2) {
+            system("clear");
             int index;
             cout << "Sélectionnez l'adhérent (index) : "<<endl;
             for (size_t i = 0; i < adherents.size(); ++i) {
@@ -96,6 +97,7 @@ int main() {
                 cin.get();
             }
         } else if (choix == 3) {
+            system("clear");
             string nom, adresse;
             cout << "Entrez le nom de la bibliothèque : ";
             cin.ignore();
@@ -107,9 +109,9 @@ int main() {
             nouvelleBib->setAdresse(adresse);
             bibliotheques.push(nouvelleBib);
             cout << "Bibliothèque ajoutée avec succès !" << endl;
-            cin.ignore();
             cin.get();
         } else if (choix == 4) {
+            system("clear");
             string nom, prenom, adresse;
             int index, nbLivresMax;
             cout << "Entrez le nom de l'adhérent : ";

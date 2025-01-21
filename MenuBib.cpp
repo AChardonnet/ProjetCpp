@@ -28,6 +28,7 @@ int menuBib(Bibliotheque &b1) {
         cin >> choix;
 
         if (choix == 1) {
+            system("clear");
             int typeLivre;
             cout << "Sélectionnez le type de livre : 1. BD 2. Roman 3. Théâtre 4. Album 5.Recueil: ";
             cin >> typeLivre;
@@ -57,7 +58,7 @@ int menuBib(Bibliotheque &b1) {
                 nouveauLivre = new Roman(auteur, titre, editeur, isbn, publicCible, genre);
             } else if (typeLivre == 3) {
                 int siecle;
-                cout << "Entrez le dessinateur : ";
+                cout << "Entrez le siècle : ";
                 cin >> siecle;
                 nouveauLivre = new Theatre(auteur, titre, editeur, isbn, publicCible, siecle);
             } else if (typeLivre == 4) {
@@ -71,18 +72,23 @@ int menuBib(Bibliotheque &b1) {
                 getline(cin, indicateur);
                 nouveauLivre = new Recueil(auteur, titre, editeur, isbn, publicCible, indicateur);
             }
-
             if (nouveauLivre != nullptr) {
                 b1.ajoutLivre(nouveauLivre);
                 cout << "Livre ajouté avec succès" << endl;
+                cin.clear();
+                cin.get();
             } else {
                 cout << "Type de livre invalide" << endl;
+                cin.ignore();
+                cin.get();
             }
         } else if (choix == 2) {
+            system("clear");
             b1.Afficher();
             cin.ignore();
             cin.get();
         } else if (choix == 3) {
+            system("clear");
             string categorie;
             cout << "Entrez la catégorie : ";
             cin.ignore();
@@ -91,14 +97,19 @@ int menuBib(Bibliotheque &b1) {
             cin.get();
 
         } else if (choix == 4) {
+            system("clear");
             int id;
             cout << "Entrez l'ID du livre à supprimer : ";
             cin >> id;
             b1.supprimer(id);
         } else if (choix == 5) {
+            system("clear");
             b1.rendre();
             cout << "Tous les livres empruntés ont été rendus" << endl;
+            cin.ignore();
+            cin.get();
         } else if (choix == 6) {
+            system("clear");
             string nom, prenom, adresse;
             cout << "Entrez le nom de l'adhérent : ";
             cin.ignore();

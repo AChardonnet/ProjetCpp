@@ -1,7 +1,5 @@
 #include <iostream>
 #include "Adherent.h"
-#include "Bibliotheque.h"
-#include "Livre.h"
 
 using namespace std;
 
@@ -21,6 +19,7 @@ int MenuAdherent(Adherent &adherent) {
         cin >> choix;
 
         if (choix == 1) {
+            system("clear");
             int idLivre;
             cout << "Entrez l'ID du livre à emprunter : ";
             cin >> idLivre;
@@ -42,6 +41,7 @@ int MenuAdherent(Adherent &adherent) {
                 cin.get();
             }
         } else if (choix == 2) {
+            system("clear");
             int idLivre;
             cout << "Entrez l'ID du livre à rendre : ";
             cin >> idLivre;
