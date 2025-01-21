@@ -6,7 +6,7 @@ using namespace std;
 void afficherMenuAdherent() {
     cout << "1. Emprunter un livre" << endl;
     cout << "2. Rendre un livre" << endl;
-    cout << "3. Quitter" << endl;
+    cout << "3. Retour" << endl;
     cout << "Entrez votre choix : ";
 }
 

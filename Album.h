@@ -7,7 +7,7 @@
 #include "Livre.h"
 
 
-class Album : Livre {
+class Album : public Livre {
 private:
     string illustrations;
 

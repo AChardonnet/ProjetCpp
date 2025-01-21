@@ -16,7 +16,7 @@ void afficherMenuBib() {
     cout << "4. Supprimer un livre" << endl;
     cout << "5. Rendre tous les livres empruntés" << endl;
     cout << "6. Ajouter un adhérent"<<endl;
-    cout << "7. Quitter" << endl;
+    cout << "7. Retour" << endl;
     cout << "Entrez votre choix : ";
 }
 
@@ -65,7 +65,7 @@ int menuBib(Bibliotheque &b1) {
                 string Illustrations;
                 cout << "Entrez le type d'illustrations : ";
                 getline(cin, Illustrations);
-                //nouveauLivre = new Album(auteur, titre, editeur, isbn, publicCible, Illustrations);
+                nouveauLivre = new Album(auteur, titre, editeur, isbn, publicCible, Illustrations);
             } else if (typeLivre == 5) {
                 string indicateur;
                 cout << "Entrez le style du recueil : ";
