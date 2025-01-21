@@ -1,14 +1,16 @@
 #include "chainedList.h"
+#include "Adherent.h"
+#include "Bibliotheque.h"
 
 template <class T>
 chainedList<T>::chainedList() {
     head = nullptr;
-    size = 0;
+    taille = 0;
 }
 
 template <class T>
 int chainedList<T>::size() {
-    return size;
+    return taille;
 }
 
 template <class T>
@@ -23,12 +25,12 @@ void chainedList<T>::push(T data) {
         }
         current->setNext(newNode);
     }
-    size++;
+    taille++;
 }
 
 template <class T>
 T chainedList<T>::operator[](int index) {
-    if (index < 0 || index >= size) {
+    if (index < 0 || index >= taille) {
         throw "Index out of bounds";
     }
     chainedListNode<T> *current = head;
@@ -38,7 +40,5 @@ T chainedList<T>::operator[](int index) {
     return current->getData();
 }
 
-// Explicit template instantiation
-template class chainedList<int>;
 template class chainedList<Bibliotheque*>;
 template class chainedList<Adherent*>;

@@ -19,6 +19,7 @@
 #include "MenuBib.cpp"
 #include "MenuAdherent.cpp"
 #include "chainedList.cpp"
+#include "chainedListNode.cpp"
 
 using namespace std;
 
@@ -36,8 +37,8 @@ int Adherent::nbTotAdherent = 0;
 int Bibliotheque::nbTotBibliotheques = 0;
 
 int main() {
-    chainedList bibliotheques;
-    chainedList adherents;
+    chainedList<Bibliotheque*> bibliotheques;
+    chainedList<Adherent*> adherents;
 
     // Initial setup
     Bibliotheque* b1 = new Bibliotheque();

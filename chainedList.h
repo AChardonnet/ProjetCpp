@@ -7,7 +7,7 @@ template <class T>
 class chainedList {
     private:
         chainedListNode<T> *head;
-        int size;
+        int taille;
     public:
         chainedList();
         int size();
