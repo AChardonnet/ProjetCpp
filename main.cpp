@@ -69,7 +69,7 @@ int main() {
 
         if (choix == 1) {
             int index;
-            cout << "Sélectionnez la bibliothèque (index) : ";
+            cout << "Sélectionnez la bibliothèque (index) : "<<endl;
             for (size_t i = 0; i < bibliotheques.size(); ++i) {
                 cout << i << ". " << bibliotheques[i]->getNom() << endl;
             }
@@ -81,7 +81,7 @@ int main() {
             }
         } else if (choix == 2) {
             int index;
-            cout << "Sélectionnez l'adhérent (index) : ";
+            cout << "Sélectionnez l'adhérent (index) : "<<endl;
             for (size_t i = 0; i < adherents.size(); ++i) {
                 cout << i << ". " << adherents[i]->getNom() << " " << adherents[i]->getPrenom() << endl;
             }
@@ -103,6 +103,8 @@ int main() {
             nouvelleBib->setAdresse(adresse);
             bibliotheques.push_back(nouvelleBib);
             cout << "Bibliothèque ajoutée avec succès !" << endl;
+            cin.ignore();
+            cin.get();
         } else if (choix == 4) {
             string nom, prenom, adresse;
             int index, nbLivresMax;
@@ -113,7 +115,7 @@ int main() {
             getline(cin, prenom);
             cout << "Entrez l'adresse de l'adhérent : ";
             getline(cin, adresse);
-            cout << "Sélectionnez la bibliothèque (index) : ";
+            cout << "Sélectionnez la bibliothèque (index) : "<<endl;
             for (size_t i = 0; i < bibliotheques.size(); ++i) {
                 cout << i << ". " << bibliotheques[i]->getNom() << endl;
             }
@@ -124,13 +126,19 @@ int main() {
                 Adherent* nouvelAdherent = new Adherent(nom, prenom, adresse, bibliotheques[index], nbLivresMax);
                 adherents.push_back(nouvelAdherent);
                 cout << "Adhérent ajouté avec succès !" << endl;
+                cin.ignore();
+                cin.get();
             } else {
                 cout << "Index de bibliothèque invalide !" << endl;
+                cin.ignore();
+                cin.get();
             }
         } else if (choix == 5) {
             break;
         } else {
             cout << "Choix invalide ! Veuillez réessayer." << endl;
+            cin.ignore();
+            cin.get();
         }
     }
 
