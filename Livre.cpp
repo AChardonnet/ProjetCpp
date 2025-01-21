@@ -47,6 +47,10 @@ string Livre::getEtat() {
     return this->etat;
 }
 
+string Livre::getISBN() {
+    return this->ISBN;
+}
+
 int Livre::getIdBibOrig() {
     return this->idBibOrig;
 }

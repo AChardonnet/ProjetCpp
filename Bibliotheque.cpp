@@ -66,10 +66,10 @@ Livre *Bibliotheque::trouveLivre(int id) {
 
 Livre *Bibliotheque::trouveLivre(string ISBN) {
     for (int i = 0; i < nbLivres; i++) {
-        int id_livre = livres[i]->getId();
+        string ISBN_livre = livres[i]->getISBN();
         string etat = livres[i]->getEtat();
         int idBibOrig = livres[i]->getIdBibOrig();
-        if (id_livre == id && etat == "disponible" && (idBibOrig == 0 or idBibOrig != this->id)) {
+        if (ISBN == ISBN_livre && etat == "Disponible" && (idBibOrig == 0 or idBibOrig != this->id)) {
             return livres[i];
         }
     }

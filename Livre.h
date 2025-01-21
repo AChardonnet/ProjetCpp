@@ -35,6 +35,8 @@ public:
     string getCategorie();
 
     string getEtat();
+    
+    string getISBN();
 
     int getIdBibOrig();
 

@@ -20,5 +20,5 @@ Theatre::Theatre(string auteur, string titre, string editeur, string ISBN, strin
 
 void Theatre::Afficher() {
     Livre::Afficher();
-    cout << "Siècle: " << this->siecle << endl;
+    cout << " Siècle: " << this->siecle << endl;
 }

@@ -60,8 +60,8 @@ int main() {
     bibliotheques.push(b2);
 
     Adherent* a1 = new Adherent("Martin", "Pierre", "11 rue de Provence", b1, 30);
-    a1->emprunter(1);
-    a1->rendre(1);
+    a1->emprunter(2);
+    a1->rendre(2);
 
     adherents.push(a1);
 

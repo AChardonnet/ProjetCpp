@@ -5,7 +5,6 @@
 #include "Theatre.h"
 #include "Album.h"
 #include "Recueil.h"
-#include "Adherent.h"
 #include "chainedList.h"
 
 using namespace std;
