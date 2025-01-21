@@ -44,6 +44,14 @@ Adherent::Adherent(string nom, string prenom, string adresse, Bibliotheque *bibl
     livres = new Livre *[nbLivresMax];
 }
 
+string Adherent::getNom() {
+    return nom;
+}
+
+string Adherent::getPrenom() {
+    return prenom;
+}
+
 void Adherent::emprunter(int idLivre) {
     if (nbLivres >= nbLivresMax) {
         throw "Trop de livres sont empruntés";

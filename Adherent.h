@@ -36,6 +36,10 @@ public:
     void rendre(int idLivre);
 
     int trouveLivre(int idLivre);
+
+    string getNom() ;
+    
+    string getPrenom() ;
 };
 
 

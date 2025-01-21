@@ -121,3 +121,7 @@ void Bibliotheque::setNom(string nom) {
 void Bibliotheque::setAdresse(string adresse) {
     this->adresse = adresse;
 }
+
+string Bibliotheque::getNom(){
+    return nom;
+}

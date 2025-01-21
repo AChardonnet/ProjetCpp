@@ -48,6 +48,8 @@ public:
     void setNom(string nom);
 
     void setAdresse(string adresse);
+
+    string getNom();
 };
 
 
