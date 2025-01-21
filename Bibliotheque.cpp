@@ -39,15 +39,17 @@ void Bibliotheque::Afficher() {
     cout << adresse << endl;
     cout << "--------------------------------------------------------" << endl;
     for (int i = 0; i < nbLivres; i++) {
+        if(livres[i]->getIdBibOrig()!=id){
         livres[i]->Afficher();
         cout << "--------------------------------------------------------" << endl;
+        }
     }
 }
 
 void Bibliotheque::AfficherCat(string cat) {
     cout << cat << endl;
     for (int i = 0; i < nbLivres; i++) {
-        if (livres[i]->getCategorie() == cat) {
+        if (livres[i]->getCategorie() == cat && livres[i]->getIdBibOrig()!=id) {
             livres[i]->Afficher();
         }
     }
@@ -81,6 +83,9 @@ void Bibliotheque::demander(string ISBN, Bibliotheque *bib) {
     if (livre != nullptr) {
         if (livre->getIdBibOrig() == 0) {
             livre->setIdBibOrig(bib->id);
+        }
+        else{
+            bib->supprimer(livre->getId());
         }
         ajoutLivre(livre);
     }
