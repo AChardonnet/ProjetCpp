@@ -4,6 +4,8 @@
 #include "Roman.h"
 #include "Theatre.h"
 #include "Album.h"
+#include "Recueil.h"
+
 
 using namespace std;
 
@@ -20,15 +22,16 @@ void afficherMenuBib() {
 int menuBib(Bibliotheque &b1) {
     int choix;
     while (true) {
-        afficherMenu();
+        system("clear");
+        afficherMenuBib();
         cin >> choix;
 
         if (choix == 1) {
             int typeLivre;
-            cout << "Sélectionnez le type de livre : 1. BD 2. Roman 3. Théâtre 4. Album : ";
+            cout << "Sélectionnez le type de livre : 1. BD 2. Roman 3. Théâtre 4. Album 5.Recueil: ";
             cin >> typeLivre;
 
-            string auteur, titre, editeur, isbn;
+            string auteur, titre, editeur, isbn, publicCible;
             cout << "Entrez l'auteur : ";
             cin.ignore();
             getline(cin, auteur);
@@ -38,31 +41,54 @@ int menuBib(Bibliotheque &b1) {
             getline(cin, editeur);
             cout << "Entrez l'ISBN : ";
             getline(cin, isbn);
-
+            cout << "Entrez le public ciblé : ";
+            getline(cin, publicCible);
+            Livre * nouveauLivre;
             if (typeLivre == 1) {
-                nouveauLivre = new BD(auteur, titre, editeur, isbn);
+                string dessinateur;
+                cout << "Entrez le dessinateur : ";
+                getline(cin, dessinateur);
+                nouveauLivre = new BD(auteur, titre, editeur, isbn, publicCible, dessinateur);
             } else if (typeLivre == 2) {
-                nouveauLivre = new Roman(auteur, titre, editeur, isbn);
+                string genre;
+                cout << "Entrez le genre : ";
+                getline(cin, genre);
+                nouveauLivre = new Roman(auteur, titre, editeur, isbn, publicCible, genre);
             } else if (typeLivre == 3) {
-                nouveauLivre = new Theatre(auteur, titre, editeur, isbn);
+                int siecle;
+                cout << "Entrez le dessinateur : ";
+                cin >> siecle;
+                nouveauLivre = new Theatre(auteur, titre, editeur, isbn, publicCible, siecle);
             } else if (typeLivre == 4) {
-                nouveauLivre = new Album(auteur, titre, editeur, isbn);
+                string Illustrations;
+                cout << "Entrez le type d'illustrations : ";
+                getline(cin, Illustrations);
+                //nouveauLivre = new Album(auteur, titre, editeur, isbn, publicCible, Illustrations);
+            } else if (typeLivre == 5) {
+                string indicateur;
+                cout << "Entrez le style du recueil : ";
+                getline(cin, indicateur);
+                nouveauLivre = new Recueil(auteur, titre, editeur, isbn, publicCible, indicateur);
             }
 
             if (nouveauLivre != nullptr) {
                 b1.ajoutLivre(nouveauLivre);
-                cout << "Livre ajouté avec succès !" << endl;
+                cout << "Livre ajouté avec succès" << endl;
             } else {
-                cout << "Type de livre invalide !" << endl;
+                cout << "Type de livre invalide" << endl;
             }
         } else if (choix == 2) {
             b1.Afficher();
+            cin.ignore();
+            cin.get();
         } else if (choix == 3) {
             string categorie;
             cout << "Entrez la catégorie : ";
             cin.ignore();
             getline(cin, categorie);
             b1.AfficherCat(categorie);
+            cin.get();
+
         } else if (choix == 4) {
             int id;
             cout << "Entrez l'ID du livre à supprimer : ";
@@ -70,7 +96,7 @@ int menuBib(Bibliotheque &b1) {
             b1.supprimer(id);
         } else if (choix == 5) {
             b1.rendre();
-            cout << "Tous les livres empruntés ont été rendus !" << endl;
+            cout << "Tous les livres empruntés ont été rendus" << endl;
         } else if (choix == 6) {
             break;
         } else {

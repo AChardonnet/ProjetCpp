@@ -16,6 +16,7 @@
 #include "Roman.cpp"
 #include "Theatre.cpp"
 #include "Livre.cpp"
+#include "MenuBib.cpp"
 
 using namespace std;
 
@@ -44,6 +45,6 @@ int main()
     //b1.Afficher();
     cout << a1.trouveLivre(1);
     a1.rendre(1);
-
+    menuBib(b1);
     return 0;
 }

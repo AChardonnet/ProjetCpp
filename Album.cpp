@@ -3,7 +3,7 @@
 //
 
 #include "Album.h"
-
+#include "Livre.h"
 #include <iostream>
 
 Album::Album() : Livre() {

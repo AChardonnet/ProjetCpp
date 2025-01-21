@@ -5,7 +5,6 @@
 #include "BD.h"
 
 #include <iostream>
-#include <ostream>
 
 BD::BD() : Livre() {
 }
