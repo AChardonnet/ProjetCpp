@@ -5,7 +5,7 @@
 #include "Theatre.h"
 #include "Album.h"
 #include "Recueil.h"
-#include "MenuAdherent.cpp"
+#include "Adherent.h"
 
 using namespace std;
 
@@ -111,7 +111,7 @@ int menuBib(Bibliotheque &b1) {
             cout << "Entrez le nombre maximum de livres empruntables : ";
             cin >> nbLivresMax;
 
-            Adherent *nouvelAdherent = new Adherent(nom, prenom, adresse, b1, nbLivresMax);
+            Adherent *nouvelAdherent = new Adherent(nom, prenom, adresse, &b1, nbLivresMax);
         } else if (choix == 7) {
             break;
         } else {

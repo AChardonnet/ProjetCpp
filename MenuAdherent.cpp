@@ -28,9 +28,18 @@ int MenuAdherent(Adherent &adherent) {
             try {
                 adherent.emprunter(idLivre);
                 cout << "Livre emprunté avec succès !" << endl;
+                cin.ignore();
+                cin.get();
             } catch (const exception &e) {
                 cout << "le livre n'a pas pu être emprunté" << endl;
-                cout << msg << endl;
+                cout << e.what() << endl;
+                cin.ignore();
+                cin.get();
+            } catch(const char * e){
+                cout << "le livre n'a pas pu être emprunté" << endl;
+                cout << e << endl;
+                cin.ignore();
+                cin.get();
             }
         } else if (choix == 2) {
             int idLivre;
@@ -40,9 +49,13 @@ int MenuAdherent(Adherent &adherent) {
             try {
                 adherent.rendre(idLivre);
                 cout << "Livre rendu avec succès !" << endl;
+                cin.ignore();
+                cin.get();
             } catch (const exception &e) {
                 cout << "le livre n'a pas pu être rendu" << endl;
                 cout << e.what() << endl;
+                cin.ignore();
+                cin.get();
             }
         } else if (choix == 3) {
             break;

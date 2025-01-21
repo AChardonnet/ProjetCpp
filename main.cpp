@@ -17,6 +17,7 @@
 #include "Theatre.cpp"
 #include "Livre.cpp"
 #include "MenuBib.cpp"
+#include "MenuAdherent.cpp"
 
 using namespace std;
 
