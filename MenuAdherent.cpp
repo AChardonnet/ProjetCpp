@@ -61,6 +61,9 @@ int MenuAdherent(Adherent &adherent) {
             break;
         } else {
             cout << "Choix invalide ! Veuillez réessayer." << endl;
+            cin.clear();
+            cin.ignore(2, '\n');
+            cin.get();
         }
     }
 

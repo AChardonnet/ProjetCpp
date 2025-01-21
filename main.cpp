@@ -66,7 +66,6 @@ int main() {
         system("clear");
         afficherMenuPrincipal();
         cin >> choix;
-
         if (choix == 1) {
             int index;
             cout << "Sélectionnez la bibliothèque (index) : "<<endl;
@@ -78,6 +77,8 @@ int main() {
                 menuBib(*bibliotheques[index]);
             } else {
                 cout << "Index invalide !" << endl;
+                cin.ignore();
+                cin.get();
             }
         } else if (choix == 2) {
             int index;
@@ -90,6 +91,8 @@ int main() {
                 MenuAdherent(*adherents[index]);
             } else {
                 cout << "Index invalide !" << endl;
+                cin.ignore();
+                cin.get();
             }
         } else if (choix == 3) {
             string nom, adresse;
@@ -137,10 +140,10 @@ int main() {
             break;
         } else {
             cout << "Choix invalide ! Veuillez réessayer." << endl;
-            cin.ignore();
+            cin.clear();
+            cin.ignore(2, '\n');
             cin.get();
         }
     }
-
     return 0;
 }
