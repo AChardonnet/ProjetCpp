@@ -2,11 +2,11 @@
 // Created by antoi on 07/01/2025.
 //
 
-#include "Recueil.h"
+#include "../headers/Recueil.h"
 
 #include <iostream>
 
-#include "Livre.h"
+#include "../headers/Livre.h"
 
 
 Recueil::Recueil(): Livre() {

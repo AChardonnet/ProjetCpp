@@ -2,8 +2,8 @@
 // Created by antoi on 07/01/2025.
 //
 
-#include "Album.h"
-#include "Livre.h"
+#include "../headers/Album.h"
+#include "../headers/Livre.h"
 #include <iostream>
 
 Album::Album() : Livre() {

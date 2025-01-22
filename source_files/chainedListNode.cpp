@@ -1,4 +1,4 @@
-#include "chainedListNode.h"
+#include "../headers/chainedListNode.h"
 
 template <class T>
 chainedListNode<T>::chainedListNode(T data) {

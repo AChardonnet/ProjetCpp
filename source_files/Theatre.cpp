@@ -2,12 +2,12 @@
 // Created by antoi on 07/01/2025.
 //
 
-#include "Theatre.h"
+#include "../headers/Theatre.h"
 
 #include <iostream>
 #include <ostream>
 
-#include "Livre.h"
+#include "../headers/Livre.h"
 
 
 Theatre::Theatre(): Livre() {

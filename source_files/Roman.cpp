@@ -2,11 +2,11 @@
 // Created by antoi on 07/01/2025.
 //
 
-#include "Roman.h"
+#include "../headers/Roman.h"
 
 #include <iostream>
 
-#include "Livre.h"
+#include "../headers/Livre.h"
 
 
 Roman::Roman(): Livre() {

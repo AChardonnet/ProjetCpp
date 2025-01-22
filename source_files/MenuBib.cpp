@@ -1,11 +1,11 @@
 #include <iostream>
-#include "Bibliotheque.h"
-#include "BD.h"
-#include "Roman.h"
-#include "Theatre.h"
-#include "Album.h"
-#include "Recueil.h"
-#include "chainedList.h"
+#include "../headers/Bibliotheque.h"
+#include "../headers/BD.h"
+#include "../headers/Roman.h"
+#include "../headers/Theatre.h"
+#include "../headers/Album.h"
+#include "../headers/Recueil.h"
+#include "../headers/chainedList.h"
 
 using namespace std;
 
